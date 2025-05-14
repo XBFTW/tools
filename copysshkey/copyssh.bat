@@ -24,7 +24,7 @@ if not exist "%PUBKEY%" (
 )
 
 echo.
-echo 🚀 Copying SSH key to %REMOTE%...
+echo Copying SSH key to %REMOTE%...
 type "%PUBKEY%" | ssh %REMOTE% "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys"
 
 if %errorlevel% neq 0 (

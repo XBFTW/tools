@@ -33,7 +33,7 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-echo ✅ Key copied successfully to %REMOTE%
+echo DONE: Key copied successfully to %REMOTE%
 echo.
 
 REM === Parse user and host ===
@@ -43,7 +43,7 @@ for /f "tokens=1,2 delims=@" %%a in ("%REMOTE%") do (
 )
 
 REM === Append SSH config entry ===
-echo 📁 Adding alias '%HOSTNAME_ALIAS%' to SSH config file...
+echo Adding alias '%HOSTNAME_ALIAS%' to SSH config file...
 
 (
     echo.
@@ -53,7 +53,7 @@ echo 📁 Adding alias '%HOSTNAME_ALIAS%' to SSH config file...
     echo     IdentityFile %PRIVKEY%
 ) >> "%CONFIG_FILE%"
 
-echo ✅ SSH config updated: you can now connect using:
+echo DONE: SSH config updated: you can now connect using:
 echo     ssh %HOSTNAME_ALIAS%
 
 endlocal

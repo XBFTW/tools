@@ -7,12 +7,12 @@ echo =============================
 echo.
 
 REM === Prompt for remote username and IP ===
-echo This script assumes the public key is saved at %USERPROFILE%\.ssh\xbftwkey-public.pub
+echo This script assumes the public key is saved at %USERPROFILE%\.ssh\id_ed25519.pub
 set /p REMOTE="Enter remote SSH login (e.g., user@192.168.1.100): "
 set /p HOSTNAME_ALIAS="Enter a name to use in your SSH config file (e.g., myserver): "
 
-set PUBKEY=%USERPROFILE%\.ssh\xbftwkey-public.pub
-set PRIVKEY=%USERPROFILE%\.ssh\xbftwkey-private
+set PUBKEY=%USERPROFILE%\.ssh\id_ed25519.pub
+set PRIVKEY=%USERPROFILE%\.ssh\id_ed25519
 set CONFIG_FILE=%USERPROFILE%\.ssh\config
 
 REM === Check if public key exists ===
